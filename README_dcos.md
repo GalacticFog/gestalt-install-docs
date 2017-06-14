@@ -18,23 +18,23 @@ Download images with `docker pull`:
 ```sh
 # Pull images
 for i in \
-  galacticfog/gestalt-api-gateway:dcos-1.1.0 \
-  galacticfog/gestalt-dcos:1.1.0 \
-  galacticfog/gestalt-laser-executor-dotnet:dcos-1.1.0 \
-  galacticfog/gestalt-laser-executor-golang:dcos-1.1.0 \
-  galacticfog/gestalt-laser-executor-js:dcos-1.1.0 \
-  galacticfog/gestalt-laser-executor-jvm:dcos-1.1.0 \
-  galacticfog/gestalt-laser-executor-python:dcos-1.1.0 \
-  galacticfog/gestalt-laser-executor-ruby:dcos-1.1.0 \
-  galacticfog/gestalt-laser:dcos-1.1.0 \
-  galacticfog/gestalt-meta:dcos-1.1.0 \
-  galacticfog/gestalt-policy:dcos-1.1.0 \
-  galacticfog/gestalt-security:dcos-1.1.0 \
-  galacticfog/gestalt-ui-react:dcos-1.1.0 \
-  galacticfog/kong:dcos-1.1.0 \
-  galacticfog/postgres_repl:dcos-1.1.0 \
-  galacticfog/rabbit:dcos-1.1.0 \
-  galacticfog/universe-server:gestalt-1.1.0 \
+  galacticfog/gestalt-api-gateway:release-1.2.0 \
+  galacticfog/gestalt-dcos:1.2.0 \
+  galacticfog/gestalt-laser-executor-dotnet:release-1.2.0 \
+  galacticfog/gestalt-laser-executor-golang:release-1.2.0 \
+  galacticfog/gestalt-laser-executor-js:release-1.2.0 \
+  galacticfog/gestalt-laser-executor-jvm:release-1.2.0 \
+  galacticfog/gestalt-laser-executor-python:release-1.2.0 \
+  galacticfog/gestalt-laser-executor-ruby:release-1.2.0 \
+  galacticfog/gestalt-laser:release-1.2.0 \
+  galacticfog/gestalt-meta:release-1.2.0 \
+  galacticfog/gestalt-policy:release-1.2.0 \
+  galacticfog/gestalt-security:release-1.2.0 \
+  galacticfog/gestalt-ui-react:release-1.2.0 \
+  galacticfog/kong:release-1.2.0 \
+  galacticfog/postgres_repl:release-1.2.0 \
+  galacticfog/rabbit:release-1.2.0 \
+  galacticfog/universe-server:gestalt-1.2.0 \
  ; do
    docker pull $i
  done
@@ -47,27 +47,27 @@ for i in \
 ```sh
 # Save to tar file
 docker save \
-  galacticfog/gestalt-api-gateway:dcos-1.1.0 \
-  galacticfog/gestalt-dcos:1.1.0 \
-  galacticfog/gestalt-laser-executor-dotnet:dcos-1.1.0 \
-  galacticfog/gestalt-laser-executor-golang:dcos-1.1.0 \
-  galacticfog/gestalt-laser-executor-js:dcos-1.1.0 \
-  galacticfog/gestalt-laser-executor-jvm:dcos-1.1.0 \
-  galacticfog/gestalt-laser-executor-python:dcos-1.1.0 \
-  galacticfog/gestalt-laser-executor-ruby:dcos-1.1.0 \
-  galacticfog/gestalt-laser:dcos-1.1.0 \
-  galacticfog/gestalt-meta:dcos-1.1.0 \
-  galacticfog/gestalt-policy:dcos-1.1.0 \
-  galacticfog/gestalt-security:dcos-1.1.0 \
-  galacticfog/gestalt-ui-react:dcos-1.1.0 \
-  galacticfog/kong:dcos-1.1.0 \
-  galacticfog/postgres_repl:dcos-1.1.0 \
-  galacticfog/rabbit:dcos-1.1.0 \
-  galacticfog/universe-server:gestalt-1.1.0 \
- > gestalt-dcos-images-1.1.0.tar
+  galacticfog/gestalt-api-gateway:release-1.2.0 \
+  galacticfog/gestalt-dcos:1.2.0 \
+  galacticfog/gestalt-laser-executor-dotnet:release-1.2.0 \
+  galacticfog/gestalt-laser-executor-golang:release-1.2.0 \
+  galacticfog/gestalt-laser-executor-js:release-1.2.0 \
+  galacticfog/gestalt-laser-executor-jvm:release-1.2.0 \
+  galacticfog/gestalt-laser-executor-python:release-1.2.0 \
+  galacticfog/gestalt-laser-executor-ruby:release-1.2.0 \
+  galacticfog/gestalt-laser:release-1.2.0 \
+  galacticfog/gestalt-meta:release-1.2.0 \
+  galacticfog/gestalt-policy:release-1.2.0 \
+  galacticfog/gestalt-security:release-1.2.0 \
+  galacticfog/gestalt-ui-react:release-1.2.0 \
+  galacticfog/kong:release-1.2.0 \
+  galacticfog/postgres_repl:release-1.2.0 \
+  galacticfog/rabbit:release-1.2.0 \
+  galacticfog/universe-server:gestalt-1.2.0 \
+ > gestalt-dcos-images-1.2.0.tar
 
 # Optionally compress the tar file prior to transfer
-# gzip gestalt-dcos-images-1.1.0.tar
+# gzip gestalt-dcos-images-1.2.0.tar
 
 ```
 The resulting TAR file is about 4-5 GB uncompressed.
@@ -78,53 +78,53 @@ Run the following from a node with access to the Private Docker registry.
 
 ### 1) Load Gestalt Images from TAR File
 
-Transfer `gestalt-dcos-images-1.1.0.tar` to the private Docker registry node, then load the images into the registry using `docker load`:
+Transfer `gestalt-dcos-images-1.2.0.tar` to the private Docker registry node, then load the images into the registry using `docker load`:
 
 ```sh
 
-# First transfer 'gestalt-dcos-images-1.1.0.tar'
+# First transfer 'gestalt-dcos-images-1.2.0.tar'
 
-$ docker load -i gestalt-dcos-images-1.1.0.tar
-Loaded image: galacticfog/gestalt-laser-executor-dotnet:dcos-1.1.0
-Loaded image: galacticfog/gestalt-laser-executor-ruby:dcos-1.1.0
-Loaded image: galacticfog/gestalt-policy:dcos-1.1.0
-Loaded image: galacticfog/rabbit:dcos-1.1.0
-Loaded image: galacticfog/kong:dcos-1.1.0
-Loaded image: galacticfog/gestalt-laser-executor-js:dcos-1.1.0
-Loaded image: galacticfog/gestalt-laser-executor-jvm:dcos-1.1.0
-Loaded image: galacticfog/gestalt-laser-executor-python:dcos-1.1.0
-Loaded image: galacticfog/gestalt-laser:dcos-1.1.0
-Loaded image: galacticfog/gestalt-security:dcos-1.1.0
-Loaded image: galacticfog/gestalt-dcos:1.1.0
-Loaded image: galacticfog/gestalt-laser-executor-golang:dcos-1.1.0
-Loaded image: galacticfog/gestalt-meta:dcos-1.1.0
-Loaded image: galacticfog/postgres_repl:dcos-1.1.0
-Loaded image: galacticfog/gestalt-api-gateway:dcos-1.1.0
-Loaded image: galacticfog/gestalt-ui-react:dcos-1.1.0
-Loaded image: galacticfog/universe-server:gestalt-1.1.0
+$ docker load -i gestalt-dcos-images-1.2.0.tar
+Loaded image: galacticfog/gestalt-laser-executor-dotnet:release-1.2.0
+Loaded image: galacticfog/gestalt-laser-executor-ruby:release-1.2.0
+Loaded image: galacticfog/gestalt-policy:release-1.2.0
+Loaded image: galacticfog/rabbit:release-1.2.0
+Loaded image: galacticfog/kong:release-1.2.0
+Loaded image: galacticfog/gestalt-laser-executor-js:release-1.2.0
+Loaded image: galacticfog/gestalt-laser-executor-jvm:release-1.2.0
+Loaded image: galacticfog/gestalt-laser-executor-python:release-1.2.0
+Loaded image: galacticfog/gestalt-laser:release-1.2.0
+Loaded image: galacticfog/gestalt-security:release-1.2.0
+Loaded image: galacticfog/gestalt-dcos:1.2.0
+Loaded image: galacticfog/gestalt-laser-executor-golang:release-1.2.0
+Loaded image: galacticfog/gestalt-meta:release-1.2.0
+Loaded image: galacticfog/postgres_repl:release-1.2.0
+Loaded image: galacticfog/gestalt-api-gateway:release-1.2.0
+Loaded image: galacticfog/gestalt-ui-react:release-1.2.0
+Loaded image: galacticfog/universe-server:gestalt-1.2.0
 ```
 
 ### 2) Re-Tag and push Gestalt Images for Private Registry
 
 ```sh
 for i in \
-  galacticfog/gestalt-api-gateway:dcos-1.1.0 \
-  galacticfog/gestalt-dcos:1.1.0 \
-  galacticfog/gestalt-laser-executor-dotnet:dcos-1.1.0 \
-  galacticfog/gestalt-laser-executor-golang:dcos-1.1.0 \
-  galacticfog/gestalt-laser-executor-js:dcos-1.1.0 \
-  galacticfog/gestalt-laser-executor-jvm:dcos-1.1.0 \
-  galacticfog/gestalt-laser-executor-python:dcos-1.1.0 \
-  galacticfog/gestalt-laser-executor-ruby:dcos-1.1.0 \
-  galacticfog/gestalt-laser:dcos-1.1.0 \
-  galacticfog/gestalt-meta:dcos-1.1.0 \
-  galacticfog/gestalt-policy:dcos-1.1.0 \
-  galacticfog/gestalt-security:dcos-1.1.0 \
-  galacticfog/gestalt-ui-react:dcos-1.1.0 \
-  galacticfog/kong:dcos-1.1.0 \
-  galacticfog/postgres_repl:dcos-1.1.0 \
-  galacticfog/rabbit:dcos-1.1.0 \
-  galacticfog/universe-server:gestalt-1.1.0 \
+  galacticfog/gestalt-api-gateway:release-1.2.0 \
+  galacticfog/gestalt-dcos:1.2.0 \
+  galacticfog/gestalt-laser-executor-dotnet:release-1.2.0 \
+  galacticfog/gestalt-laser-executor-golang:release-1.2.0 \
+  galacticfog/gestalt-laser-executor-js:release-1.2.0 \
+  galacticfog/gestalt-laser-executor-jvm:release-1.2.0 \
+  galacticfog/gestalt-laser-executor-python:release-1.2.0 \
+  galacticfog/gestalt-laser-executor-ruby:release-1.2.0 \
+  galacticfog/gestalt-laser:release-1.2.0 \
+  galacticfog/gestalt-meta:release-1.2.0 \
+  galacticfog/gestalt-policy:release-1.2.0 \
+  galacticfog/gestalt-security:release-1.2.0 \
+  galacticfog/gestalt-ui-react:release-1.2.0 \
+  galacticfog/kong:release-1.2.0 \
+  galacticfog/postgres_repl:release-1.2.0 \
+  galacticfog/rabbit:release-1.2.0 \
+  galacticfog/universe-server:gestalt-1.2.0 \
  ; do
    docker tag $i my.private.repo/$i
    docker push my.private.repo/$i
@@ -149,7 +149,7 @@ JSON Example:
   "cmd": "./bin/gestalt-dcos -Dhttp.port=$PORT0 -Dmeta.company-name=\"COMPANY NAME\" -Dmarathon.url=http://marathon.mesos:8080 -Dmarathon.app-group=gestalt-poc -Dlaser.scale-down-timeout=60 -Dlaser.max-port-range=60500 -Dlaser.min-port-range=60000 -Dlaser.min-cool-executors=1 -Dlaser.enable-js-runtime=true -Dlaser.enable-jvm-runtime=true -Dlaser.enable-dotnet-runtime=true -Dlaser.enable-golang-runtime=true -Dlaser.enable-python-runtime=true -Dlaser.enable-ruby-runtime=true -Dsecurity.username=gfadmin -Dsecurity.password=\"ENTER A PASSWORD\" -Ddatabase.num-secondaries=0 -Ddatabase.prefix=gestalt- -Ddatabase.username=gestaltdev -Ddatabase.password=\"ENTER A PASSWORD\" -Ddatabase.provision=true -Ddatabase.provisioned-size=100 -Dmarathon.tld=\"gestalt-poc.internal.mycompany.com\"",
   "env": {
     "JVM_OPTS": "-Xmx384m",
-    "GESTALT_FRAMEWORK_VERSION": "1.1.0"
+    "GESTALT_FRAMEWORK_VERSION": "1.2.0"
   },
   "instances": 1,
   "cpus": 0.5,
@@ -162,7 +162,7 @@ JSON Example:
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "galacticfog/gestalt-dcos:1.1.0",
+      "image": "galacticfog/gestalt-dcos:1.2.0",
       "forcePullImage": true,
       "privileged": false,
       "network": "HOST"
@@ -190,10 +190,15 @@ JSON Example:
     "DCOS_PACKAGE_REGISTRY_VERSION": "3.0",
     "DCOS_SERVICE_NAME": "gestalt-poc",
     "DCOS_SERVICE_PORT_INDEX": "0",
-    "DCOS_PACKAGE_VERSION": "1.1.0",
+    "DCOS_PACKAGE_VERSION": "1.2.0",
     "DCOS_PACKAGE_NAME": "gestalt-framework",
     "DCOS_PACKAGE_IS_FRAMEWORK": "true"
   },
   "ports": [0]
 }
 ```
+
+### 2) Run the Launcher as a DC/OS Service
+
+ 1. Go to DC/OS dashbaord, Services, Deploy Service
+ -  Enter JSON mode, paste the JSON payload and run
