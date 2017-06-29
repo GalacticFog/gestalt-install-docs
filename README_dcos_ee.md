@@ -10,7 +10,30 @@ The following detail the offline installation process for DC/OS Enterprise versi
 
 ## Download and Package Galactic Fog Images from Docker Hub
 
-The following instructions are for Gestalt Platform version `1.2.1`, which contains both `1.2.0` and `1.2.1` images.  
+The following instructions are for Gestalt Platform version `1.2.1`, which contains both `1.2.0` and `1.2.1` images:
+
+```sh
+# 1.2.1 images
+galacticfog/gestalt-dcos:1.2.1
+galacticfog/gestalt-api-gateway:release-1.2.1
+galacticfog/kong:release-1.2.1
+galacticfog/gestalt-laser:release-1.2.1
+galacticfog/gestalt-meta:release-1.2.1
+galacticfog/gestalt-ui-react:release-1.2.1
+
+# 1.2.0 images
+galacticfog/gestalt-laser-executor-dotnet:release-1.2.0
+galacticfog/gestalt-laser-executor-golang:release-1.2.0
+galacticfog/gestalt-laser-executor-js:release-1.2.0
+galacticfog/gestalt-laser-executor-jvm:release-1.2.0
+galacticfog/gestalt-laser-executor-python:release-1.2.0
+galacticfog/gestalt-laser-executor-ruby:release-1.2.0
+galacticfog/gestalt-policy:release-1.2.0
+galacticfog/gestalt-security:release-1.2.0
+galacticfog/postgres_repl:release-1.2.0
+galacticfog/rabbit:release-1.2.0
+galacticfog/universe-server:gestalt-1.2.0
+```
 
 Run the following from a node running Docker with access to Docker Hub:
 
