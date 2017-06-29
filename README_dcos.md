@@ -141,6 +141,7 @@ Using the below example, modify the following under the `cmd` field:
  - Modify `-Dsecurity.password` parameter with a password of your choice.
  - Modify `-Dmeta.company-name` parameter with your company name.
  - Modify `-Dmarathon.tld` parameter corresponding to DNS settings (e.g. `gestalt-poc.internal.mycompany.com`)
+ - Also, modify the `GESTALT_*_IMG` parmeters in the `env` field to reference the location of the images in your private registry.
 
 JSON Example:
 ```json
@@ -149,7 +150,22 @@ JSON Example:
   "cmd": "./bin/gestalt-dcos -Dhttp.port=$PORT0 -Dmeta.company-name=\"COMPANY NAME\" -Dmarathon.url=http://marathon.mesos:8080 -Dmarathon.app-group=gestalt-poc -Dlaser.scale-down-timeout=60 -Dlaser.max-port-range=60500 -Dlaser.min-port-range=60000 -Dlaser.min-cool-executors=1 -Dlaser.enable-js-runtime=true -Dlaser.enable-jvm-runtime=true -Dlaser.enable-dotnet-runtime=true -Dlaser.enable-golang-runtime=true -Dlaser.enable-python-runtime=true -Dlaser.enable-ruby-runtime=true -Dsecurity.username=gfadmin -Dsecurity.password=\"ENTER A PASSWORD\" -Ddatabase.num-secondaries=0 -Ddatabase.prefix=gestalt- -Ddatabase.username=gestaltdev -Ddatabase.password=\"ENTER A PASSWORD\" -Ddatabase.provision=true -Ddatabase.provisioned-size=100 -Dmarathon.tld=\"gestalt-poc.internal.mycompany.com\"",
   "env": {
     "JVM_OPTS": "-Xmx384m",
-    "GESTALT_FRAMEWORK_VERSION": "1.2.0"
+    "GESTALT_FRAMEWORK_VERSION": "1.2.0",
+    "GESTALT_DATA_IMG": "galacticfog/postgres_repl:release-1.2.0",
+    "GESTALT_RABBIT_IMG": "galacticfog/rabbit:release-1.2.0",
+    "GESTALT_KONG_IMG": "galacticfog/kong:release-1.2.0",
+    "GESTALT_SECURITY_IMG": "galacticfog/gestalt-security:release-1.2.0",
+    "GESTALT_META_IMG": "galacticfog/gestalt-meta:release-1.2.0",
+    "GESTALT_POLICY_IMG": "galacticfog/gestalt-policy:release-1.2.0",
+    "GESTALT_LASER_IMG": "galacticfog/gestalt-laser:release-1.2.0",
+    "GESTALT_API_GATEWAY_IMG": "galacticfog/gestalt-api-gateway:release-1.2.0",
+    "GESTALT_UI_IMG": "galacticfog/gestalt-ui-react:release-1.2.0",
+    "LASER_EXECUTOR_JS_IMG": "galacticfog/gestalt-laser-executor-js:release-1.2.0",
+    "LASER_EXECUTOR_JVM_IMG": "galacticfog/gestalt-laser-executor-jvm:release-1.2.0",
+    "LASER_EXECUTOR_DOTNET_IMG": "galacticfog/gestalt-laser-executor-dotnet:release-1.2.0",
+    "LASER_EXECUTOR_PYTHON_IMG": "galacticfog/gestalt-laser-executor-python:release-1.2.0",
+    "LASER_EXECUTOR_RUBY_IMG": "galacticfog/gestalt-laser-executor-ruby:release-1.2.0",
+    "LASER_EXECUTOR_GOLANG_IMG": "galacticfog/gestalt-laser-executor-golang:release-1.2.0"
   },
   "instances": 1,
   "cpus": 0.5,
