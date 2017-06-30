@@ -202,6 +202,16 @@ Using the below example, modify the JSON file for the DC/OS environment.
 Authentication settings:
  - `DCOS_AUTH_UID` - set to the name of the DC/OS service account.
  - `DCOS_AUTH_PRIVATE_KEY` - Set to the private key of the service account (replace any new lines with "\n", see example)
+
+**Note:** You can insert "\n" strings into your private key with this command:
+```sh
+# Append "\n" to end of every line, then remove new line characters.  The result is suitable to copy and paste into the JSON payload.
+key_with_returns=$( while IFS='' read -r line; do echo "$line\\n"; done < privatekey | tr -d '\n' )
+
+echo "\"DCOS_AUTH_PRIVATE_KEY\" : \"$key_with_returns\","
+```
+
+
  - `DCOS_PERMISSIVE_HTTPS` - set to `true` to relax certificate checks if needed.
 
 Gestalt Security settings:
