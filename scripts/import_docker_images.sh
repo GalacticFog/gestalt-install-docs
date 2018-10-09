@@ -16,6 +16,7 @@ repo_prefix="my.private.registry.example.com"
 ### 2) Re-Tag and push Gestalt Images for Private Registry
 
 for i in \
+  galacticfog/gestalt-installer:3.0.3 \
   galacticfog/gestalt-api-gateway:release-2.3.1 \
   galacticfog/gestalt-laser-executor-dotnet:release-2.3.1 \
   galacticfog/gestalt-laser-executor-golang:release-2.3.1 \

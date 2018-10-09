@@ -11,6 +11,7 @@
 
 # Pull images
 for i in \
+  galacticfog/gestalt-installer:3.0.3 \
   galacticfog/gestalt-api-gateway:release-2.3.1 \
   galacticfog/gestalt-laser-executor-dotnet:release-2.3.1 \
   galacticfog/gestalt-laser-executor-golang:release-2.3.1 \
@@ -47,6 +48,7 @@ done
 # Save to tar file
 echo "Saving docker images..."
 time docker save \
+  galacticfog/gestalt-installer:3.0.3 \
   galacticfog/gestalt-api-gateway:release-2.3.1 \
   galacticfog/gestalt-laser-executor-dotnet:release-2.3.1 \
   galacticfog/gestalt-laser-executor-golang:release-2.3.1 \
